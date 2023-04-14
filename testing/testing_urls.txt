@@ -1,0 +1,21 @@
+# Regular season testing
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/' + urls[0].split('/')[-1]
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202102130GSW.html'
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202203250CHO.html'
+# technical foul testing
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202303290CHI.html'
+
+# play-off game testing
+# play-in game testing
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202204130ATL.html'
+# play-ins
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202105210GSW.html'
+# first round
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202204200BOS.html'
+# conf semifinal
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202205020MIA.html'
+# conf final
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202205200GSW.html'
+# finals
+pbp_url = 'https://www.basketball-reference.com/boxscores/pbp/202206020GSW.html'
+print(pbp_url)
