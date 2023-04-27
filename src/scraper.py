@@ -271,7 +271,6 @@ for item in pbp_soup.find('table',id='pbp').find_all('tr'):
         jump_ball_away_player_1 = row_divs[1].get_text().split("Jump ball: ")[1].split(" vs.")[0]
         jump_ball_home_player_2 = row_divs[1].get_text().split("Jump ball: ")[1].split(" vs.")[1].split(" (")[0]
 
-        # TODO add to sql
         # print(game_number, away_team, home_team, cur_minute, cur_second, misc_type, player_in, player_out, time_out_team, violation, jump_ball_away_player_1, jump_ball_home_player_1)
         data_row = [game_number, away_team, home_team, cur_minute,
                     cur_second, misc_type, play_team, player_in, player_out,
@@ -423,6 +422,5 @@ for item in pbp_soup.find('table',id='pbp').find_all('tr'):
     # input into sql
     add_single_row(cursor, connection, "NBA_data", table,
                   data_row)
-
 
 end_cursor_connection(connection, cursor)
