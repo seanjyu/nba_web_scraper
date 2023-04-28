@@ -43,13 +43,102 @@ home_team - text - Name of home team<br>
 min_in_game - integer - Minute in game play is made<br>
 sec_in_game - float - Second of minute in game play is made<br>
 player - text - Name of player<br>
-play_team - text - Team of player that commited the play<br>
+play_team - text - Team of player that committed the play<br>
 shot_type - int - Type of shot<br>
+- 0 - 2-pt Jump shot 
+- 1 - Layup
+- 2 - 3-put Jump shot
+- 3 - Dunk
+- 4 - Hook shot
+- 5 - Free throw
+
 make - int - Whether the shot was made<br>
 - 0 - Miss
 - 1 - Make
 
 distance - int - Distance of shot<br>
-assist_player - text - Player who assisted shot<br>
+assist_player - text - Player who assisted shot, if no assist then the string "none" is entered<br>
 away_score - int - Away score after play<br>
 home_score - int - Home score after play<br>
+
+<ins>Rebound Stats</ins><br>
+game_number - integer - Number of game in scraping session<br>
+away_team - text - Name of away team<br>
+home_team - text - Name of home team<br>
+min_in_game - integer - Minute in game play is made<br>
+sec_in_game - float - Second of minute in game play is made<br>
+rebounder - text - Player who obtained rebound<br>
+play_team - text - Team of player that committed the play<br>
+shot_type - int - Type of shot that was rebounded (Same as offensive stats)<br>
+- 0 - 2-pt Jump shot 
+- 1 - Layup
+- 2 - 3-put Jump shot
+- 3 - Dunk
+- 4 - Hook shot
+- 5 - Free throw
+
+distance - int - Distance of shot that was rebounded<br>
+rebound_type - int - Type of rebound
+- 0 - Defensive 
+- 1 - Offensive
+
+<ins>Turnover Stats</ins><br>
+game_number - integer - Number of game in scraping session<br>
+away_team - text - Name of away team<br>
+home_team - text - Name of home team<br>
+min_in_game - integer - Minute in game play is made<br>
+sec_in_game - float - Second of minute in game play is made<br>
+turnover_player - text - Player who committed turnover<br>
+player_team - text - Team of player that committed the play<br>
+turnover_type - int - Type of turnover<br>
+- 0 - Steal
+- 1 - Double dribble
+- 2 - Shot clock
+- 3 - Offensive foul
+- 4 - Out of bounds
+- 5 - Palming
+- 6 - Traveling
+- 7 - Back court
+
+steal_player - text - Player who stole the ball, if no player stole ball then the string "none" is entered<br>
+
+<ins>Foul Stats</ins><br>
+game_number - integer - Number of game in scraping session<br>
+away_team - text - Name of away team<br>
+home_team - text - Name of home team<br>
+min_in_game - integer - Minute in game play is made<br>
+sec_in_game - float - Second of minute in game play is made<br>
+fouled_player - text - Player who was fouled<br>
+play_team - text - Team whose player was fouled<br>
+foul_committer - text - Player who committed the foul<br>
+foul_type - int - Type of foul
+- 0 - Shooting
+- 1 - Personal take
+- 2 - Loose ball
+- 3 - Technical
+- 4 - Defensive 3 seconds
+- 5 - Offensive
+- 6 - Flagrant
+- 7 - Personal
+
+<ins>Miscellaneous Stats</ins><br>
+game_number - integer - Number of game in scraping session<br>
+away_team - text - Name of away team<br>
+home_team - text - Name of home team<br>
+min_in_game - integer - Minute in game play is made<br>
+sec_in_game - float - Second of minute in game play is made<br>
+misc_type - integer - Type of miscellaneous stat<br>
+- 0 - Player entering game
+- 1 - Time out
+- 2 - Violation
+- 3 - Instant Reply
+
+play_team - text - Team whose player was fouled<br>
+NOTE - for the following columns if the type does not apply then the string "none" will be entered<br>
+player_in - text - Player entering game<br>
+player_out - text - Player exiting game<br> 
+time_out_team - text - Team that called timeout<br>
+violation - text - Type of violation<br>
+replay_request - text - Description of replay request<br>
+jump_ball_player_home - text - Player from home team participating in first jump ball<br>
+jump_ball_player_away - text - Player from away team participating in first jump ball<br>

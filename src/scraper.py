@@ -328,21 +328,20 @@ for item in pbp_soup.find('table',id='pbp').find_all('tr'):
         turnover_type = 0
         if "steal" in turnover_split[1]:
             steal_player = turnover_split[2][0:-1]
-            turnover_type = 1
         elif "double dribble" in turnover_split[1]:
-            turnover_type = 2
+            turnover_type = 1
         elif "shot clock" in turnover_split[1]:
-            turnover_type = 3
+            turnover_type = 2
         elif "offensive foul" in turnover_split[1]:
-            turnover_type = 4
+            turnover_type = 3
         elif "out of bounds" in turnover_split[1]:
-            turnover_type = 5
+            turnover_type = 4
         elif "palming" in turnover_split[1]:
-            turnover_type = 6
+            turnover_type = 5
         elif "traveling" in turnover_split[1]:
-            turnover_type = 7
+            turnover_type = 6
         elif "back court" in turnover_split[1]:
-            turnover_type = 8
+            turnover_type = 7
         data_row = [game_number, away_team, home_team, cur_minute,
                     cur_second, turnover_player, play_team, turnover_type,
                     steal_player]
@@ -399,19 +398,22 @@ for item in pbp_soup.find('table',id='pbp').find_all('tr'):
         jump_ball_away_player_1 = "none"
         jump_ball_home_player_2 = "none"
         if "enters" in non_empty_col:
-            misc_type = 1
+            misc_type = 0
             col_split = non_empty_col.split(" enters the game for")
             player_in = col_split[0]
             player_out = col_split[1]
         elif "timeout" in non_empty_col:
-            misc_type = 2
+            misc_type = 1
             time_out_team = non_empty_col.split(" full timeout")[0]
         elif "Violation" in non_empty_col:
-            misc_type = 3
+            misc_type = 2
             violation = non_empty_col.split("(")[1][0:-1]
         elif "Instant Replay" in non_empty_col:
-            misc_type = 4
-            replay_request = non_empty_col.split("(")[0:-1]
+            misc_type = 3
+            # split string
+            split_col = non_empty_col.split("(")[1:]
+            if len(split_col) != 0:
+                replay_request = non_empty_col.split("(")[1:][0][:-1]
 
         data_row = [game_number, away_team, home_team, cur_minute,
                     cur_second, misc_type, play_team, player_in, player_out,
